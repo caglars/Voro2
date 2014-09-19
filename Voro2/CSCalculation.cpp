@@ -18,7 +18,7 @@ using namespace std;
 // Set up constants for the container geometry
 const double x_min=0,x_max=6000;
 const double y_min=0,y_max=6000;
-const double z_min=0,z_max=80;
+const double z_min=0,z_max=120;
 const double cvol=(x_max-x_min)*(y_max-y_min)*(z_max-z_min);
 
 // Set up the number of blocks that the container is divided into
@@ -32,7 +32,7 @@ const int n_x=60,n_y=60,n_z=6;
 //const double hcube=h*h*h;
 
 // Set the number of particles that are going to be randomly introduced
-const int particles=50;
+const int particles=18;
 
 // This function returns a random double between 0 and 1
 double rnd() {
@@ -53,7 +53,7 @@ void Calculation::calculate() {
     
     container con(x_min,x_max,y_min,y_max,z_min,z_max,n_x,n_y,n_z,false,false,false,8);
     
-    
+/*
     for(i=0;i<particles-1;i++) {
 		x=x_min+rnd()*(x_max-x_min);
 		y=y_min+rnd()*(y_max-y_min);
@@ -61,9 +61,9 @@ void Calculation::calculate() {
 		con.put(i,x,y,z);
 	}
     con.put(particles-1, 3000, 3000, 40);
-   
+*/
     
-   /*
+
     con.put(0, 1000, 1000, 40);
     con.put(1, 3000, 1000, 40);
     con.put(2, 5000, 1000, 40);
@@ -73,7 +73,17 @@ void Calculation::calculate() {
     con.put(6, 1000, 5000, 40);
     con.put(7, 3000, 5000, 40);
     con.put(8, 3000, 3000, 40);
-    */
+ 
+    con.put(9, 1000, 1000, 80);
+    con.put(10, 3000, 1000, 80);
+    con.put(11, 5000, 1000, 80);
+    con.put(12, 1000, 3000, 80);
+    con.put(13, 5000, 5000, 80);
+    con.put(14, 5000, 3000, 80);
+    con.put(15, 1000, 5000, 80);
+    con.put(16, 3000, 5000, 80);
+    con.put(17, 3000, 3000, 80);
+
     
     
     /*
@@ -297,11 +307,7 @@ void Calculation::simRun(container& aCon) {
         rightHandSide[counter] = 0;
     }
     
-    
-    
-    
-    
-    //double **coefficient;
+   
     coefficient = new double *[particles];
     for(int i = 0; i <particles; i++)
         coefficient[i] = new double[particles];
