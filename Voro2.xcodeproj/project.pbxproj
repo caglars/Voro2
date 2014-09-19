@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		39210E0E19C1CF8E00BC3271 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39210E0D19C1CF8E00BC3271 /* main.cpp */; };
 		39210E1019C1CF8E00BC3271 /* Voro2.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39210E0F19C1CF8E00BC3271 /* Voro2.1 */; };
+		39210E1719C1D00E00BC3271 /* libvoro++.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39210E1619C1D00E00BC3271 /* libvoro++.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		39210E6919C37B6F00BC3271 /* CSCalculation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39210E6719C37B6F00BC3271 /* CSCalculation.cpp */; };
+		39210E6C19C5917F00BC3271 /* CSSolver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39210E6A19C5917F00BC3271 /* CSSolver.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +31,11 @@
 		39210E0A19C1CF8E00BC3271 /* Voro2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Voro2; sourceTree = BUILT_PRODUCTS_DIR; };
 		39210E0D19C1CF8E00BC3271 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		39210E0F19C1CF8E00BC3271 /* Voro2.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Voro2.1; sourceTree = "<group>"; };
+		39210E1619C1D00E00BC3271 /* libvoro++.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libvoro++.a"; path = "../../../../voro++-0.4.6/src/libvoro++.a"; sourceTree = "<group>"; };
+		39210E6719C37B6F00BC3271 /* CSCalculation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CSCalculation.cpp; sourceTree = "<group>"; };
+		39210E6819C37B6F00BC3271 /* CSCalculation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSCalculation.h; sourceTree = "<group>"; };
+		39210E6A19C5917F00BC3271 /* CSSolver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CSSolver.cpp; sourceTree = "<group>"; };
+		39210E6B19C5917F00BC3271 /* CSSolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSolver.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39210E1719C1D00E00BC3271 /* libvoro++.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +53,7 @@
 		39210E0119C1CF8E00BC3271 = {
 			isa = PBXGroup;
 			children = (
+				39210E1619C1D00E00BC3271 /* libvoro++.a */,
 				39210E0C19C1CF8E00BC3271 /* Voro2 */,
 				39210E0B19C1CF8E00BC3271 /* Products */,
 			);
@@ -62,6 +72,10 @@
 			children = (
 				39210E0D19C1CF8E00BC3271 /* main.cpp */,
 				39210E0F19C1CF8E00BC3271 /* Voro2.1 */,
+				39210E6719C37B6F00BC3271 /* CSCalculation.cpp */,
+				39210E6819C37B6F00BC3271 /* CSCalculation.h */,
+				39210E6A19C5917F00BC3271 /* CSSolver.cpp */,
+				39210E6B19C5917F00BC3271 /* CSSolver.h */,
 			);
 			path = Voro2;
 			sourceTree = "<group>";
@@ -118,6 +132,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				39210E0E19C1CF8E00BC3271 /* main.cpp in Sources */,
+				39210E6C19C5917F00BC3271 /* CSSolver.cpp in Sources */,
+				39210E6919C37B6F00BC3271 /* CSCalculation.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,13 +213,30 @@
 		39210E1419C1CF8E00BC3271 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = (
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"~/voro++-0.4.6/src/",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/caglars/voro++-0.4.6/src",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = /usr/local/bin;
 			};
 			name = Debug;
 		};
 		39210E1519C1CF8E00BC3271 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				GCC_VERSION = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/caglars/voro++-0.4.6/src",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
